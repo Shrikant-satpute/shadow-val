@@ -18,9 +18,17 @@ body {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Particle System */
@@ -46,12 +54,15 @@ body {
         transform: translateY(100vh) rotate(0deg);
         opacity: 0;
     }
+
     10% {
         opacity: 1;
     }
+
     90% {
         opacity: 1;
     }
+
     100% {
         transform: translateY(-100px) rotate(360deg);
         opacity: 0;
@@ -78,8 +89,15 @@ body {
 }
 
 @keyframes portalPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .portal-ring {
@@ -131,8 +149,13 @@ body {
 }
 
 @keyframes ringRotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* Main Content */
@@ -147,8 +170,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Title with Glitch Effect */
@@ -161,14 +191,21 @@ body {
     font-size: 3.5rem;
     font-weight: bold;
     text-shadow: 0 0 20px rgba(255, 105, 180, 0.8),
-                 0 0 40px rgba(255, 105, 180, 0.6);
+        0 0 40px rgba(255, 105, 180, 0.6);
     margin-bottom: 10px;
     animation: glow 2s ease-in-out infinite;
 }
 
 @keyframes glow {
-    0%, 100% { text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.6); }
-    50% { text-shadow: 0 0 30px rgba(255, 105, 180, 1), 0 0 60px rgba(255, 105, 180, 0.8); }
+
+    0%,
+    100% {
+        text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.6);
+    }
+
+    50% {
+        text-shadow: 0 0 30px rgba(255, 105, 180, 1), 0 0 60px rgba(255, 105, 180, 0.8);
+    }
 }
 
 .subtitle {
@@ -230,8 +267,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .btn-yes:hover {
@@ -240,9 +284,10 @@ body {
 }
 
 .btn-no {
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
     transition: all 0.2s ease;
 }
 
@@ -255,9 +300,19 @@ body {
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px) rotate(-5deg); }
-    75% { transform: translateX(10px) rotate(5deg); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateX(10px) rotate(5deg);
+    }
 }
 
 /* Sparkles for Yes Button */
@@ -284,6 +339,7 @@ body {
         opacity: 1;
         transform: translate(0, 0) scale(1);
     }
+
     100% {
         opacity: 0;
         transform: translate(var(--tx), var(--ty)) scale(0);
@@ -299,8 +355,163 @@ body {
 }
 
 @keyframes hintFade {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* 3D Game Screen */
+.game-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 50;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.game-screen.active {
+    display: flex;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.game-container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.game-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+}
+
+.game-instruction {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    min-width: 180px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffeb3b;
+}
+
+.game-canvas {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.game-heart {
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    animation: floatHeart 4s linear;
+    user-select: none;
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.6));
+}
+
+.game-heart:hover {
+    transform: scale(1.3);
+}
+
+.game-heart:active {
+    transform: scale(0.9);
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-420px) rotate(360deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.game-heart.caught {
+    animation: heartCaught 0.5s ease-out forwards !important;
+}
+
+@keyframes heartCaught {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.game-hint {
+    margin-top: 20px;
+    font-size: 1rem;
+    opacity: 0.7;
 }
 
 /* Reveal Screen */
@@ -325,8 +536,13 @@ body {
 }
 
 @keyframes revealFade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .reveal-content {
@@ -358,6 +574,7 @@ body {
         opacity: 1;
         transform: translate(0, 0) scale(1) rotate(0deg);
     }
+
     100% {
         opacity: 0;
         transform: translate(var(--ex), var(--ey)) scale(0.5) rotate(720deg);
@@ -372,9 +589,17 @@ body {
 }
 
 @keyframes bounceIn {
-    0% { transform: scale(0); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .reveal-message {
@@ -389,8 +614,15 @@ body {
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Date Details */
@@ -416,8 +648,15 @@ body {
 }
 
 @keyframes cardFloat {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .detail-card .icon {
@@ -436,7 +675,8 @@ body {
     margin: 5px 0;
 }
 
-.time, .hint-text {
+.time,
+.hint-text {
     font-size: 0.95rem;
     opacity: 0.8;
     font-style: italic;
@@ -492,36 +732,83 @@ body {
     .glitch {
         font-size: 2.5rem;
     }
-    
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
     .question {
         font-size: 1.5rem;
     }
-    
+
+    .message-box {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
     .buttons-container {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
-    
+
     .btn {
         width: 100%;
         max-width: 300px;
+        padding: 15px 30px;
+        font-size: 1.1rem;
     }
-    
+
     .portal-container {
         width: 400px;
         height: 400px;
     }
-    
+
+    /* Game Screen Mobile */
+    .game-title {
+        font-size: 2rem;
+    }
+
+    .game-instruction {
+        font-size: 1.1rem;
+    }
+
+    .game-stats {
+        gap: 15px;
+    }
+
+    .stat {
+        min-width: 140px;
+        padding: 12px 20px;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .game-canvas {
+        height: 350px;
+    }
+
+    .game-heart {
+        font-size: 35px;
+    }
+
     .reveal-title {
         font-size: 2rem;
     }
-    
+
     .romantic-text {
         font-size: 1.1rem;
     }
-    
+
     .date-details {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .detail-card {
+        padding: 20px;
     }
 }
 
@@ -529,12 +816,125 @@ body {
     .glitch {
         font-size: 2rem;
     }
-    
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .question {
+        font-size: 1.3rem;
+    }
+
+    .subtext {
+        font-size: 0.9rem;
+    }
+
+    .message-box {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
     .portal-container {
         width: 300px;
         height: 300px;
     }
-    
+
+    .ring-1 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .ring-2 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .ring-3 {
+        width: 160px;
+        height: 160px;
+    }
+
+    .ring-4 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ring-5 {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Game Screen Small Mobile */
+    .game-title {
+        font-size: 1.6rem;
+    }
+
+    .game-instruction {
+        font-size: 1rem;
+    }
+
+    .game-stats {
+        gap: 10px;
+    }
+
+    .stat {
+        min-width: 120px;
+        padding: 10px 15px;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .stat-value {
+        font-size: 1.3rem;
+    }
+
+    .game-canvas {
+        height: 300px;
+    }
+
+    .game-heart {
+        font-size: 30px;
+    }
+
+    .game-hint {
+        font-size: 0.9rem;
+    }
+
+    /* Reveal Screen Small Mobile */
+    .reveal-title {
+        font-size: 1.6rem;
+    }
+
+    .romantic-text {
+        font-size: 1rem;
+    }
+
+    .detail-card .icon {
+        font-size: 2.5rem;
+    }
+
+    .detail-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .detail-card p {
+        font-size: 1rem;
+    }
+
+    .final-message {
+        font-size: 1rem;
+    }
+
+    .signature {
+        font-size: 1.2rem;
+    }
+
     .easter-egg {
         bottom: 10px;
         right: 10px;

@@ -54,6 +54,33 @@
         </div>
     </div>
 
+    <!-- 3D Game Screen -->
+    <div class="game-screen" id="gameScreen">
+        <div class="game-container">
+            <h2 class="game-title">Before we continue... Let's play! 🎮</h2>
+            <p class="game-instruction">Catch 10 floating hearts to unlock your surprise! 💕</p>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">Hearts Caught:</span>
+                    <span class="stat-value" id="heartsCaught">0 / 10</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="gameTimer">0s</span>
+                </div>
+            </div>
+
+            <div class="game-canvas" id="gameCanvas">
+                <!-- 3D hearts will be spawned here -->
+            </div>
+
+            <div class="game-hint">
+                <p>💡 Tip: Click/tap the hearts as they float by!</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Reveal Screen -->
     <div class="reveal-screen" id="revealScreen">
         <div class="reveal-content">
