@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow's Love Portal 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Particle Container -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Portal Container -->
+    <div class="portal-container">
+        <div class="portal" id="portal">
+            <div class="portal-ring ring-1"></div>
+            <div class="portal-ring ring-2"></div>
+            <div class="portal-ring ring-3"></div>
+            <div class="portal-ring ring-4"></div>
+            <div class="portal-ring ring-5"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="mainContent">
+        <div class="title-container">
+            <h1 class="glitch" data-text="Hey Shadow! 💕">Hey Shadow! 💕</h1>
+            <p class="subtitle">You've been pulled into the Love Portal...</p>
+        </div>
+
+        <div class="message-box">
+            <p class="question">Will you be my Valentine? 🌹</p>
+            <p class="subtext">Choose wisely... (Just kidding, there's only one right answer 😏)</p>
+        </div>
+
+        <div class="buttons-container">
+            <button class="btn btn-yes" id="yesBtn">
+                <span class="btn-text">Yes! Obviously! 💖</span>
+                <div class="sparkles"></div>
+            </button>
+            <button class="btn btn-no" id="noBtn">
+                <span class="btn-text">No (Wrong Answer 😂)</span>
+            </button>
+        </div>
+
+        <div class="hint" id="hint">
+            <p>Psst... The "Yes" button is looking pretty good, isn't it? ✨</p>
+        </div>
+    </div>
+
+    <!-- Reveal Screen -->
+    <div class="reveal-screen" id="revealScreen">
+        <div class="reveal-content">
+            <div class="heart-explosion" id="heartExplosion"></div>
+
+            <h2 class="reveal-title">I knew you'd say Yes! 💕</h2>
+
+            <div class="reveal-message">
+                <p class="romantic-text">
+                    Shadow, you light up my world like nobody else! 🌟
+                </p>
+                <p class="romantic-text">
+                    This Valentine's Day, let's create memories that'll make even Cupid jealous! 😉
+                </p>
+            </div>
+
+            <div class="date-details">
+                <div class="detail-card">
+                    <span class="icon">📅</span>
+                    <h3>When?</h3>
+                    <p>February 14th, 2026</p>
+                    <p class="time">10:00 AM onwards</p>
+                </div>
+                <div class="detail-card">
+                    <span class="icon">📍</span>
+                    <h3>Where?</h3>
+                    <p>talao pali lake! 🎁</p>
+                    <p class="hint-text">I'll pick you up ❤️</p>
+                </div>
+                <div class="detail-card">
+                    <span class="icon">👗</span>
+                    <h3>Dress Code?</h3>
+                    <p>Look stunning</p>
+                    <p class="hint-text">(You always do anyway 😊)</p>
+                </div>
+            </div>
+
+            <div class="final-message">
+                <p>Get ready for the most romantic day ever! 🌹✨</p>
+                <p class="signature">With all my love,<br>Your Valentine((Shri)) 💝</p>
+            </div>
+
+            <button class="btn btn-close" id="closeBtn">
+                Save this moment 💕
+            </button>
+        </div>
+    </div>
+
+    <!-- Easter Egg Counter -->
+    <div class="easter-egg" id="easterEgg">
+        No button escapes: <span id="escapeCount">0</span> 😂
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
